@@ -3,6 +3,15 @@ Another Python web crawler.
 
 This is a POC for print the sitemap of a given URL and depth 0.
 
+## Requirements
+
+See requirements.txt to analyses the necessary packages or modules to execute
+cra-cra. If you have pip installed, execute the following command:
+
+```
+$ sudo pip install -r requirements.txt
+```
+
 ## How to execute
 
 ```
@@ -56,6 +65,6 @@ $
 
 ## TODO
 
-See [enhancement's issues](https://github.com/pvital/cra-cra/issues?utf8=✓&q=is%3Aissue is%3Aopen label%3Aenhancement) to know the next steps of development.
+See [enhancement's issues](https://github.com/pvital/cra-cra/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) to know the next steps of development.
 
 Make cra-cra bigger and open any issue with the label *enhancement* to request something new.

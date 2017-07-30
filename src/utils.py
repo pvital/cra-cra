@@ -23,7 +23,7 @@
 # SOFTWARE.
 
 import types
-import urllib2
+import requests
 
 
 VALID_PROTOCOLS = ['http', 'https', 'ftp']
@@ -49,7 +49,7 @@ def get_html(url):
     """Establishes a connection to a given URL, reads the source code or the
     html code and returns it."""
     try:
-        return urllib2.urlopen(url).read()
+        return requests.get(url).text
     except:
         return ""
 
