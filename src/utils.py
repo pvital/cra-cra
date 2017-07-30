@@ -81,14 +81,14 @@ def get_url(link):
 def extract_links(html):
     """Extract all links from a given HTML code and return then in a list."""
     links = []
-    begin = html.find("<a href=")
+    begin = html.find("href=")
 
     while (begin >= 0):
         end = html[begin:].find(">") + 1
         link = html[begin:begin+end]
         links.append(get_url(link))
         html = html[begin+end:]
-        begin = html.find("<a href=")
+        begin = html.find("href=")
 
     return links
 
