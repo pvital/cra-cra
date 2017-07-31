@@ -72,10 +72,10 @@ def get_url(link):
 
     url = link[begin:begin+end]
 
-    if is_valid_protocol(url):
-        return url
-    else:
+    if (not is_valid_protocol(url)) and (not url.startswith("/")):
         return ""
+
+    return url
 
 
 def extract_links(html):
@@ -98,7 +98,8 @@ def clean_links(arg):
     # Clean the given structure only if it's a list, otherwise return arg.
     if isinstance(arg, types.ListType):
         # Let only the valid URLs in the list
-        x = [item for item in arg if is_valid_protocol(item)]
+        x = [item for item in arg if (is_valid_protocol(item) or
+                                        item.startswith("/"))]
 
         # Remove duplicates
         arg = list(set(x))

@@ -30,6 +30,7 @@ class SiteMap:
 
     def __init__(self, url):
         self.seed = url
+        self.base_url = "/".join(url.split("/")[:3])
         self.protocol = get_protocol(url)
         self.index = []
         self._crawl()
@@ -49,6 +50,8 @@ class SiteMap:
     def print_sitemap(self):
         """Print the SiteMap of a specific URL."""
         for link in self.get_index():
+            if link.startswith("/"):
+                link = self.base_url + link
             print "\t |-> %s" % link
 
         print "\t |_ \n"
