@@ -21,7 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from utils import get_protocol, get_html, extract_links, clean_links
+from utils import get_protocol, get_html, extract_links
 
 class SiteMap:
     """
@@ -44,8 +44,7 @@ class SiteMap:
     def _crawl(self):
         print "Getting info for %s" % self.seed
         html = get_html(self.seed)
-        links = extract_links(html)
-        self.index = clean_links(links)
+        self.index = extract_links(html)
 
     def print_sitemap(self):
         """Print the SiteMap of a specific URL."""

@@ -90,7 +90,7 @@ def extract_links(html):
         html = html[begin+end:]
         begin = html.find("href=")
 
-    return links
+    return clean_links(links)
 
 
 def clean_links(arg):
